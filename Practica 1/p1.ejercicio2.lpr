@@ -29,17 +29,21 @@ begin
   cantMinimo := 9999;
   cantMaximo := 0;
   Write( 'escriba el nombre del archivo a procesar' );
-  ReadLn(nomArchivo);
+  ReadLn(nomArchivo);  //nombre del archivo proporcionado por el usuario
   Assing(a, nomArchivo);   //asigno archivo
   Reset(a); //abro archivo para lectura
   while (not eof (a) )do begin
     Read(a, cant); //leo la cantidad de votos
-    writeLn(canti);
+    writeLn(cant);
     if( cant > cantMaximo ) then
         cantMaximo := cant;
     else if (cant <  cantMinimo ) then
         cantMinimo := cant;
   end
+  writeln('la cantidad maxima de votos es: ', cantMaximo);
+  writeln('la cantidad minima de votos es: ', cantMinimo);
+
+  //cerrar archivo
   close(a);
 
 
