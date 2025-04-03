@@ -55,6 +55,8 @@ begin
                   //el archivo se corta justo antes del ultimo registro, eliminandolo
   end;
 
+  close(a);
+
 end;
 
 var
@@ -67,6 +69,7 @@ begin
   readln(cod);
   while( cod <> -1 )do begin
     modificarStock(a, cod);
+    eliminarDisco(a, cod);
     writeln( 'escriba codigos de discos a eliminar (-1 para finalizar)');
     readln(cod);
   end;
